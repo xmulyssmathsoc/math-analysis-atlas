@@ -1,0 +1,1005 @@
+[
+  {
+    "id": "logic-set",
+    "title": "命题、集合与量词",
+    "stage": 0,
+    "track": "预备桥梁",
+    "family": "foundation",
+    "familyName": "预备数学",
+    "prerequisites": [],
+    "summary": "掌握集合运算、命题联结词与全称/存在量词，并正确否定量词命题。",
+    "formula": "\\neg(\\forall x\\,P(x))\\iff\\exists x\\,\\neg P(x)",
+    "intuition": "证明之前，先读懂一句数学陈述到底在说什么。",
+    "pitfall": "把“对所有”否定成“对所有不”。",
+    "inquiry": "“每个实数都有更大的实数”的否定是什么？"
+  },
+  {
+    "id": "functions",
+    "title": "函数与映射",
+    "stage": 0,
+    "track": "预备桥梁",
+    "family": "foundation",
+    "familyName": "预备数学",
+    "prerequisites": [
+      "logic-set"
+    ],
+    "summary": "理解定义域、值域、单射、满射和复合映射。",
+    "formula": "f:A\\to B",
+    "intuition": "将函数视为集合之间的规则，而不仅是一条曲线。",
+    "pitfall": "混淆值域与陪域。",
+    "inquiry": "为什么单调严格递增函数一定是单射？"
+  },
+  {
+    "id": "algebra-limits",
+    "title": "代数变形与不等式",
+    "stage": 0,
+    "track": "预备桥梁",
+    "family": "foundation",
+    "familyName": "预备数学",
+    "prerequisites": [
+      "logic-set"
+    ],
+    "summary": "熟悉绝对值、三角不等式、有理化及常见估计技巧。",
+    "formula": "\\lvert x+y\\rvert\\le\\lvert x\\rvert+\\lvert y\\rvert",
+    "intuition": "严谨证明常依赖找到合适的上界。",
+    "pitfall": "把近似等号当作严格不等式。",
+    "inquiry": "如何估计 x²−4 的绝对值？"
+  },
+  {
+    "id": "trig",
+    "title": "三角函数与指数对数",
+    "stage": 0,
+    "track": "预备桥梁",
+    "family": "foundation",
+    "familyName": "预备数学",
+    "prerequisites": [
+      "functions"
+    ],
+    "summary": "复习基本初等函数、周期性与常见恒等式。",
+    "formula": "\\sin^2x+\\cos^2x=1",
+    "intuition": "这是导数、积分、级数中的常用原材料。",
+    "pitfall": "把弧度和角度混用。",
+    "inquiry": "为什么求导时通常要求弧度制？"
+  },
+  {
+    "id": "induction",
+    "title": "数学归纳法",
+    "stage": 0,
+    "track": "预备桥梁",
+    "family": "foundation",
+    "familyName": "预备数学",
+    "prerequisites": [
+      "logic-set",
+      "algebra-limits"
+    ],
+    "summary": "区分归纳基础、归纳假设与归纳步骤。",
+    "formula": "P(1),\\ P(n)\\Rightarrow P(n+1)",
+    "intuition": "把无限多个整数命题压缩为一个可传递的证明。",
+    "pitfall": "只检验前几个特例就断言成立。",
+    "inquiry": "为什么归纳法不是“观察规律”？"
+  },
+  {
+    "id": "proof-methods",
+    "title": "直接、逆否与反证法",
+    "stage": 0,
+    "track": "预备桥梁",
+    "family": "foundation",
+    "familyName": "预备数学",
+    "prerequisites": [
+      "logic-set",
+      "induction"
+    ],
+    "summary": "认识证明结构和常用推理范式。",
+    "formula": "P\\Rightarrow Q\\iff\\neg Q\\Rightarrow\\neg P",
+    "intuition": "选择证明策略往往比计算更重要。",
+    "pitfall": "在反证法中没有明确矛盾对象。",
+    "inquiry": "证明 √2 无理通常选择哪类方法？"
+  },
+  {
+    "id": "real-axiom",
+    "title": "实数与完备性",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "proof-methods",
+      "algebra-limits"
+    ],
+    "summary": "有理数的缺口由实数的完备性弥补，是极限理论的根基。",
+    "formula": "A\\ne\\varnothing,\\ A\\text{上有界}\\Rightarrow\\sup A\\in\\mathbb R",
+    "intuition": "没有完备性，很多看似自然的极限并不存在于原集合。",
+    "pitfall": "以为所有有界数列必收敛。",
+    "inquiry": "为什么有理数中 x²<2 的集合无法在有理数内取上确界？"
+  },
+  {
+    "id": "sup-inf",
+    "title": "上确界与下确界",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "real-axiom"
+    ],
+    "summary": "理解最小上界及其 ε 刻画，区分 sup 与 max。",
+    "formula": "s=\\sup A\\iff (\\forall a\\in A,a\\le s)\\land(\\forall\\varepsilon>0,\\exists a\\in A:a>s-\\varepsilon)",
+    "intuition": "sup 不要求属于集合；max 一定属于集合。",
+    "pitfall": "把上确界当成最大元。",
+    "inquiry": "开区间 (0,1) 的上确界为什么不是最大值？"
+  },
+  {
+    "id": "archimedean",
+    "title": "阿基米德性质与稠密性",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "sup-inf"
+    ],
+    "summary": "掌握自然数无界性、有理数在实数中的稠密性。",
+    "formula": "\\forall x>0,\\exists n\\in\\mathbb N:1/n<x",
+    "intuition": "再小的误差，也可以用足够大的 n 处理。",
+    "pitfall": "把“存在 n”误读为统一常数。",
+    "inquiry": "怎样证明 1/n→0？"
+  },
+  {
+    "id": "seq-limit",
+    "title": "数列极限 ε–N",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "archimedean"
+    ],
+    "summary": "用严格定义描述数列无限接近极限的过程。",
+    "formula": "a_n\\to L\\iff\\forall\\varepsilon>0\\,\\exists N\\,\\forall n>N:|a_n-L|<\\varepsilon",
+    "intuition": "ε 是你定的精度，N 是我给出的响应。",
+    "pitfall": "N 不依赖 n，但允许依赖 ε。",
+    "inquiry": "给定 ε，怎样为 aₙ=1/n 选取 N？"
+  },
+  {
+    "id": "monotone",
+    "title": "单调有界收敛定理",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "seq-limit",
+      "sup-inf"
+    ],
+    "summary": "单调递增且有上界的实数列必收敛。",
+    "formula": "a_n\\uparrow,\\sup_n a_n<\\infty\\Rightarrow a_n\\to\\sup_n a_n",
+    "intuition": "“不回头且有天花板”迫使数列接近某个位置。",
+    "pitfall": "忘了有界性条件。",
+    "inquiry": "aₙ=1−1/n 为什么收敛？"
+  },
+  {
+    "id": "bw",
+    "title": "Bolzano–Weierstrass 定理",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "seq-limit",
+      "sup-inf"
+    ],
+    "summary": "每个有界实数列都有收敛子列。",
+    "formula": "\\text{bounded}\\Rightarrow\\exists a_{n_k}\\to L",
+    "intuition": "整个数列可振荡，但总能找到一条稳定分支。",
+    "pitfall": "误以为有界意味着整列收敛。",
+    "inquiry": "(-1)ⁿ 的收敛子列有哪些？"
+  },
+  {
+    "id": "cauchy",
+    "title": "柯西收敛准则",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "seq-limit",
+      "real-axiom"
+    ],
+    "summary": "在实数中，数列收敛当且仅当它是柯西列。",
+    "formula": "\\forall\\varepsilon>0,\\exists N,\\forall m,n>N:|a_m-a_n|<\\varepsilon",
+    "intuition": "无需先知道极限是谁，只需检验尾部彼此接近。",
+    "pitfall": "把实数完备性推广到所有度量空间。",
+    "inquiry": "为什么在 ℚ 中柯西列可能不收敛？"
+  },
+  {
+    "id": "function-limit",
+    "title": "函数极限 ε–δ",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "seq-limit",
+      "functions"
+    ],
+    "summary": "理解去心邻域、单侧极限及 ε–δ 定义。",
+    "formula": "\\forall\\varepsilon>0\\,\\exists\\delta>0:0<|x-a|<\\delta\\Rightarrow|f(x)-L|<\\varepsilon",
+    "intuition": "δ 是为了让函数值精度达标而控制输入的距离。",
+    "pitfall": "忽略 x≠a 的去心条件。",
+    "inquiry": "证明 x² 在 x→2 时极限为 4，δ 如何选？"
+  },
+  {
+    "id": "continuous",
+    "title": "连续性与运算",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "function-limit"
+    ],
+    "summary": "用极限与函数值一致来刻画连续。",
+    "formula": "\\lim_{x\\to a}f(x)=f(a)",
+    "intuition": "连续意味着附近输入变化不会引起突然跳跃。",
+    "pitfall": "函数在一点有定义就认定连续。",
+    "inquiry": "为什么可去间断点可以补定义变连续？"
+  },
+  {
+    "id": "ivt",
+    "title": "介值定理与零点",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "continuous"
+    ],
+    "summary": "连续函数在闭区间上取到端点函数值之间的每个值。",
+    "formula": "f(a)f(b)<0\\Rightarrow\\exists c\\in(a,b):f(c)=0",
+    "intuition": "连续曲线跨过一条水平线就不能跳过去。",
+    "pitfall": "忽略闭区间上连续的前提。",
+    "inquiry": "怎样证明 x³+x−1 在 (0,1) 有根？"
+  },
+  {
+    "id": "compact-interval",
+    "title": "闭区间上的紧致性",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "bw",
+      "continuous"
+    ],
+    "summary": "有限维闭有界集与紧致性相联系，导出最值存在性。",
+    "formula": "f\\in C([a,b])\\Rightarrow\\exists x_{min},x_{max}",
+    "intuition": "紧致性可以把局部信息整合成全局结论。",
+    "pitfall": "将开区间的最值问题照搬闭区间。",
+    "inquiry": "f(x)=x 在 (0,1) 上有最大值吗？"
+  },
+  {
+    "id": "uniform-continuity",
+    "title": "一致连续",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "limit",
+    "familyName": "极限与连续",
+    "prerequisites": [
+      "continuous",
+      "compact-interval"
+    ],
+    "summary": "区别逐点连续与对整个定义域统一控制的连续性。",
+    "formula": "\\forall\\varepsilon>0,\\exists\\delta>0,\\forall x,y\\in D",
+    "intuition": "ε 固定后，δ 不随位置 x 而变化。",
+    "pitfall": "把对 x 逐点选 δ 当作统一 δ。",
+    "inquiry": "x² 在 ℝ 上一致连续吗？"
+  },
+  {
+    "id": "derivative",
+    "title": "导数与微分",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "differential",
+    "familyName": "微分与近似",
+    "prerequisites": [
+      "function-limit",
+      "algebra-limits"
+    ],
+    "summary": "由差商极限引出局部线性近似。",
+    "formula": "f'(a)=\\lim_{h\\to0}\\frac{f(a+h)-f(a)}h|导数是局部放大后看到的线性斜率。|可导与连续混淆（可导必连续，逆命题不成立）。",
+    "intuition": "为什么 ",
+    "pitfall": "x",
+    "inquiry": " 在零点不可导？"
+  },
+  {
+    "id": "mean-value",
+    "title": "罗尔与拉格朗日中值定理",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "differential",
+    "familyName": "微分与近似",
+    "prerequisites": [
+      "derivative",
+      "compact-interval"
+    ],
+    "summary": "连接局部导数与整体函数变化。",
+    "formula": "\\exists c\\in(a,b):f'(c)=\\frac{f(b)-f(a)}{b-a}|某个瞬时速度等于整段平均速度。|未检验闭区间连续、开区间可导。|如何证明 |sin x−sin y",
+    "intuition": "≤",
+    "pitfall": "x−y",
+    "inquiry": "？"
+  },
+  {
+    "id": "taylor",
+    "title": "Taylor 公式与余项",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "differential",
+    "familyName": "微分与近似",
+    "prerequisites": [
+      "mean-value",
+      "derivative"
+    ],
+    "summary": "使用多项式近似函数，并重视余项控制。",
+    "formula": "f(x)=\\sum_{k=0}^n\\frac{f^{(k)}(a)}{k!}(x-a)^k+R_n(x)",
+    "intuition": "高阶导数描述曲线局部形状。",
+    "pitfall": "把有限阶展开误以为对所有 x 都完全相等。",
+    "inquiry": "为什么 sin x ≈ x 只在附近可靠？"
+  },
+  {
+    "id": "riemann",
+    "title": "黎曼积分与可积性",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "integral",
+    "familyName": "积分理论",
+    "prerequisites": [
+      "continuous",
+      "sup-inf"
+    ],
+    "summary": "理解分割、上/下和与可积判别。",
+    "formula": "\\int_a^bf(x)\\,dx=\\lim_{|P|\\to0}\\sum f(\\xi_i)\\Delta x_i",
+    "intuition": "用越来越细的矩形和逼近总面积的带符号值。",
+    "pitfall": "以为所有有界函数都黎曼可积。",
+    "inquiry": "狄利克雷函数为何不可黎曼积分？"
+  },
+  {
+    "id": "ftc",
+    "title": "微积分基本定理",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "integral",
+    "familyName": "积分理论",
+    "prerequisites": [
+      "riemann",
+      "derivative"
+    ],
+    "summary": "建立积分与导数的逆向联系。",
+    "formula": "\\frac{d}{dx}\\int_a^xf(t)\\,dt=f(x)",
+    "intuition": "局部变化率与全局累积量互相连接。",
+    "pitfall": "变上限积分使用变量符号不清。",
+    "inquiry": "F(x)=∫₀ˣ cos t dt，F′(x) 是什么？"
+  },
+  {
+    "id": "integration-method",
+    "title": "换元与分部积分",
+    "stage": 1,
+    "track": "数学分析 I",
+    "family": "integral",
+    "familyName": "积分理论",
+    "prerequisites": [
+      "ftc",
+      "trig"
+    ],
+    "summary": "掌握常见积分计算方法并注意区间和边界项。",
+    "formula": "\\int u\\,dv=uv-\\int v\\,du",
+    "intuition": "计算技巧仍建立在链式法则与乘积法则之上。",
+    "pitfall": "定积分换元后忘记修改上下限。",
+    "inquiry": "为什么分部积分适合 x eˣ？"
+  },
+  {
+    "id": "series",
+    "title": "无穷级数与部分和",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "series",
+    "familyName": "级数与函数列",
+    "prerequisites": [
+      "seq-limit"
+    ],
+    "summary": "级数收敛由部分和数列是否收敛定义。",
+    "formula": "\\sum_{n=1}^{\\infty}a_n=\\lim_{N\\to\\infty}\\sum_{n=1}^Na_n",
+    "intuition": "无穷求和不是直接把无穷多个数一次加完。",
+    "pitfall": "认为 aₙ→0 足够保证级数收敛。",
+    "inquiry": "调和级数项趋于零为何仍发散？"
+  },
+  {
+    "id": "convergence-tests",
+    "title": "比较、比值与根值判别",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "series",
+    "familyName": "级数与函数列",
+    "prerequisites": [
+      "series",
+      "algebra-limits"
+    ],
+    "summary": "针对正项级数选用适当判别法。",
+    "formula": "\\limsup_{n\\to\\infty}\\sqrt[n]{|a_n|}<1\\Rightarrow\\sum a_n\\text{绝对收敛}",
+    "intuition": "不同判别法像不同放大镜，各自适合不同结构。",
+    "pitfall": "比值极限等于 1 时仍直接判断收敛。",
+    "inquiry": "Σ1/n² 应怎样用比较法处理？"
+  },
+  {
+    "id": "alternating",
+    "title": "交错级数",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "series",
+    "familyName": "级数与函数列",
+    "prerequisites": [
+      "series"
+    ],
+    "summary": "理解 Leibniz 判别法和交错级数余项估计。",
+    "formula": "a_n\\downarrow0\\Rightarrow\\sum(-1)^{n-1}a_n\\text{收敛}",
+    "intuition": "正负项交替会产生抵消效应。",
+    "pitfall": "只看交错符号而不查单调性。",
+    "inquiry": "交错调和级数与调和级数为何结论不同？"
+  },
+  {
+    "id": "absolute-conditional",
+    "title": "绝对收敛与条件收敛",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "series",
+    "familyName": "级数与函数列",
+    "prerequisites": [
+      "alternating",
+      "convergence-tests"
+    ],
+    "summary": "区分绝对收敛、条件收敛及重排影响。",
+    "formula": "\\sum|a_n|<\\infty\\Rightarrow\\sum a_n\\text{收敛}",
+    "intuition": "正负抵消虽能带来收敛，却不等于绝对收敛。",
+    "pitfall": "条件收敛级数可以任意重排而不改变和。",
+    "inquiry": "交错调和级数属于哪一种？"
+  },
+  {
+    "id": "function-sequences",
+    "title": "函数列逐点收敛",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "series",
+    "familyName": "级数与函数列",
+    "prerequisites": [
+      "function-limit",
+      "series"
+    ],
+    "summary": "对每个 x 分别考虑 fₙ(x) 的极限。",
+    "formula": "\\forall x\\in D,\\lim_{n\\to\\infty}f_n(x)=f(x)",
+    "intuition": "每个位置分别收敛，不保证整体速度一致。",
+    "pitfall": "把逐点收敛直接当作一致收敛。",
+    "inquiry": "xⁿ 在 [0,1] 上的逐点极限是什么？"
+  },
+  {
+    "id": "uniform-conv",
+    "title": "一致收敛与函数列",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "series",
+    "familyName": "级数与函数列",
+    "prerequisites": [
+      "function-sequences",
+      "uniform-continuity"
+    ],
+    "summary": "统一控制函数列误差，理解与连续性和积分交换。",
+    "formula": "\\sup_{x\\in D}|f_n(x)-f(x)|\\to0",
+    "intuition": "统一的 N 对全体 x 同时有效。",
+    "pitfall": "以为连续函数列逐点极限一定连续。",
+    "inquiry": "xⁿ 在 [0,1] 上一致收敛吗？"
+  },
+  {
+    "id": "power-series",
+    "title": "幂级数与收敛半径",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "series",
+    "familyName": "级数与函数列",
+    "prerequisites": [
+      "convergence-tests",
+      "taylor"
+    ],
+    "summary": "使用收敛半径刻画函数的幂级数表达。",
+    "formula": "\\sum_{n=0}^{\\infty}a_n(x-x_0)^n,\\quad R=1/\\limsup\\sqrt[n]{|a_n|}",
+    "intuition": "半径以内的行为通常非常规整，边界点需单独判断。",
+    "pitfall": "以为端点必随内部一起收敛。",
+    "inquiry": "Σxⁿ 的收敛区间是什么？"
+  },
+  {
+    "id": "interchange-limit",
+    "title": "极限与积分、求导的交换",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "series",
+    "familyName": "级数与函数列",
+    "prerequisites": [
+      "uniform-conv",
+      "ftc"
+    ],
+    "summary": "辨别可交换极限操作的充分条件。",
+    "formula": "f_n\\to f\\text{一致}\\Rightarrow\\int f_n\\to\\int f",
+    "intuition": "先极限后积分，不总等于先积分后极限。",
+    "pitfall": "误以为一致收敛函数列的导数也必收敛。",
+    "inquiry": "何时可以交换积分与极限？"
+  },
+  {
+    "id": "improper-integral",
+    "title": "反常积分",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "integral",
+    "familyName": "积分理论",
+    "prerequisites": [
+      "riemann",
+      "convergence-tests"
+    ],
+    "summary": "处理无界区间与被积函数无界的积分。",
+    "formula": "\\int_1^{\\infty}x^{-p}\\,dx<\\infty\\iff p>1",
+    "intuition": "用极限定义无限长度或奇点附近的面积。",
+    "pitfall": "没有分开检查两端瑕点。",
+    "inquiry": "∫₁∞ 1/x dx 收敛吗？"
+  },
+  {
+    "id": "parameter-integrals",
+    "title": "含参积分与一致性",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "integral",
+    "familyName": "积分理论",
+    "prerequisites": [
+      "interchange-limit",
+      "improper-integral"
+    ],
+    "summary": "研究积分关于参数的连续性和微分条件。",
+    "formula": "F(t)=\\int_a^bf(x,t)\\,dx",
+    "intuition": "参数改变时，积分值如何稳定变化？",
+    "pitfall": "不检查支配条件就把求导移入积分号。",
+    "inquiry": "为什么含参反常积分更需检查一致性？"
+  },
+  {
+    "id": "fourier",
+    "title": "Fourier 级数初步",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "series",
+    "familyName": "级数与函数列",
+    "prerequisites": [
+      "uniform-conv",
+      "riemann"
+    ],
+    "summary": "使用正弦余弦分解周期函数，辨别不同收敛概念。",
+    "formula": "f(x)\\sim\\frac{a_0}2+\\sum_{n\\ge1}(a_n\\cos nx+b_n\\sin nx)",
+    "intuition": "把复杂周期信号拆成简单频率。",
+    "pitfall": "默认每一点都收敛至原函数值。",
+    "inquiry": "跳跃点的 Fourier 级数可能收敛到什么值？"
+  },
+  {
+    "id": "ode-intro",
+    "title": "常微分方程与初值问题",
+    "stage": 2,
+    "track": "数学分析 II",
+    "family": "differential",
+    "familyName": "微分与近似",
+    "prerequisites": [
+      "ftc",
+      "mean-value"
+    ],
+    "summary": "从导数关系研究随时间演化的函数。",
+    "formula": "y'=ky\\Rightarrow y=Ce^{kx}",
+    "intuition": "差分的瞬时版：变化率由当前状态决定。",
+    "pitfall": "漏掉初始条件或适用区间。",
+    "inquiry": "y′=2y、y(0)=3 的解是什么？"
+  },
+  {
+    "id": "Rn-topology",
+    "title": "欧氏空间的开集、闭集",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "compact-interval",
+      "proof-methods"
+    ],
+    "summary": "将邻域、开集、闭集和紧致概念扩展至 ℝⁿ。",
+    "formula": "B_r(x)=\\{y:||y-x||<r\\}",
+    "intuition": "高维空间里的“附近”用球形邻域刻画。",
+    "pitfall": "用一维闭区间直觉处理任意高维集合。",
+    "inquiry": "ℝ² 中开单位圆盘是否有界且闭？"
+  },
+  {
+    "id": "multivariable-limit",
+    "title": "多元函数极限与连续性",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "Rn-topology",
+      "function-limit"
+    ],
+    "summary": "从任意方向与路径趋近同一点。",
+    "formula": "\\lim_{x\\to a}f(x)=L",
+    "intuition": "若不同路径有不同极限，则总极限不存在。",
+    "pitfall": "只检验直线趋近就认定极限存在。",
+    "inquiry": "沿 y=0 与 y=x² 能否识别某个反例？"
+  },
+  {
+    "id": "partial-derivative",
+    "title": "偏导数与方向导数",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "multivariable-limit",
+      "derivative"
+    ],
+    "summary": "研究函数沿坐标轴或任意方向的变化率。",
+    "formula": "\\partial_i f(a)=\\lim_{h\\to0}\\frac{f(a+he_i)-f(a)}h",
+    "intuition": "偏导是多元函数的单个切片的斜率。",
+    "pitfall": "偏导都存在便断言可微。",
+    "inquiry": "存在两个偏导能推出连续吗？"
+  },
+  {
+    "id": "total-derivative",
+    "title": "全微分与可微性",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "partial-derivative"
+    ],
+    "summary": "用线性映射统一刻画多元函数局部增量。",
+    "formula": "f(a+h)=f(a)+Df(a)h+o(||h||)",
+    "intuition": "可微意味着局部可由一个线性函数近似。",
+    "pitfall": "把偏导存在当作可微的充分条件。",
+    "inquiry": "如何区分方向导数与全微分？"
+  },
+  {
+    "id": "multichain",
+    "title": "多元链式法则",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "total-derivative"
+    ],
+    "summary": "理解 Jacobi 矩阵复合与变量依赖。",
+    "formula": "D(f\\circ g)(x)=Df(g(x))Dg(x)",
+    "intuition": "多级函数的局部线性映射像矩阵一样相乘。",
+    "pitfall": "矩阵乘法顺序写反。",
+    "inquiry": "若 z=f(x(t),y(t))，dz/dt 如何写？"
+  },
+  {
+    "id": "implicit",
+    "title": "隐函数定理",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "multichain"
+    ],
+    "summary": "在非退化条件下局部解出被隐式定义的变量。",
+    "formula": "F(x,y)=0,\\ F_y\\ne0\\Rightarrow y=g(x)",
+    "intuition": "无需显式求解方程，也能得到局部函数。",
+    "pitfall": "忽略偏导非零的条件。",
+    "inquiry": "单位圆顶部能否局部表示成 y(x)？"
+  },
+  {
+    "id": "extrema",
+    "title": "多元极值与 Hessian",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "total-derivative",
+      "compact-interval"
+    ],
+    "summary": "使用驻点与二阶条件研究极值。",
+    "formula": "\\nabla f(a)=0",
+    "intuition": "梯度为零只是候选条件，仍需判断。",
+    "pitfall": "把所有驻点都当作极小值。",
+    "inquiry": "f(x,y)=x²−y² 在原点是什么点？"
+  },
+  {
+    "id": "lagrange",
+    "title": "拉格朗日乘数法",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "extrema",
+      "implicit"
+    ],
+    "summary": "研究光滑约束下的局部极值。",
+    "formula": "\\nabla f=\\lambda\\nabla g",
+    "intuition": "约束曲线上的最优点，目标函数梯度与约束法向平行。",
+    "pitfall": "漏检约束奇异点与边界。",
+    "inquiry": "圆周上 x+y 的最大值怎么求？"
+  },
+  {
+    "id": "multivariable-taylor",
+    "title": "多元 Taylor 展开",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "taylor",
+      "total-derivative"
+    ],
+    "summary": "借助梯度与 Hessian 构造高维近似。",
+    "formula": "f(a+h)=f(a)+\\nabla f(a)\\cdot h+\\frac12h^TH(a)h+o(||h||^2)",
+    "intuition": "二次项描述局部曲面的弯曲方向。",
+    "pitfall": "在缺乏足够光滑性时照搬公式。",
+    "inquiry": "Hessian 不定为何提示鞍点？"
+  },
+  {
+    "id": "double-integral",
+    "title": "二重与三重积分",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "riemann",
+      "Rn-topology"
+    ],
+    "summary": "将黎曼和推广到二维和三维区域。",
+    "formula": "\\iint_D f(x,y)\\,dx\\,dy",
+    "intuition": "把面积/体积的小块累加起来。",
+    "pitfall": "改变积分次序时遗漏区域限制。",
+    "inquiry": "三角区域 0≤y≤x≤1 如何交换积分顺序？"
+  },
+  {
+    "id": "jacobian",
+    "title": "变量替换与 Jacobi 行列式",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "multivariable",
+    "familyName": "多元分析",
+    "prerequisites": [
+      "double-integral",
+      "multichain"
+    ],
+    "summary": "认识积分变换下的局部面积/体积缩放。",
+    "formula": "dx\\,dy=|\\det D\\Phi|\\,du\\,dv",
+    "intuition": "行列式告诉你小面积块如何拉伸。",
+    "pitfall": "极坐标换元忘记额外的 r。",
+    "inquiry": "为什么极坐标面积元是 r dr dθ？"
+  },
+  {
+    "id": "line-integral",
+    "title": "曲线与曲面积分",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "geometry",
+    "familyName": "向量分析",
+    "prerequisites": [
+      "double-integral",
+      "multichain"
+    ],
+    "summary": "研究路径上的累积与向量场的做功、通量。",
+    "formula": "\\int_C\\mathbf F\\cdot d\\mathbf r",
+    "intuition": "积分对象不再局限于区间或平面区域。",
+    "pitfall": "混淆第一型与第二型曲线积分。",
+    "inquiry": "保守场路径积分为何与路径无关？"
+  },
+  {
+    "id": "green-stokes-gauss",
+    "title": "Green、Stokes 与 Gauss 公式",
+    "stage": 3,
+    "track": "多元分析 III",
+    "family": "geometry",
+    "familyName": "向量分析",
+    "prerequisites": [
+      "line-integral",
+      "jacobian"
+    ],
+    "summary": "联系边界上的积分与内部的旋度或散度。",
+    "formula": "\\iint_S(\\nabla\\times F)\\cdot n\\,dS=\\oint_{\\partial S}F\\cdot dr",
+    "intuition": "“边界发生了什么”反映“内部累积了什么”。",
+    "pitfall": "忽略定向及适用条件。",
+    "inquiry": "三大公式为什么都像高维版微积分基本定理？"
+  },
+  {
+    "id": "metric-space",
+    "title": "度量空间",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "cauchy",
+      "Rn-topology"
+    ],
+    "summary": "抽象距离、极限、连续与收敛。",
+    "formula": "d:X\\times X\\to[0,\\infty)",
+    "intuition": "极限不是 ℝ 的专利，只要能度量距离就能讨论。",
+    "pitfall": "把 Euclidean 直觉完全照搬一般度量空间。",
+    "inquiry": "离散度量下的收敛数列长什么样？"
+  },
+  {
+    "id": "compact-metric",
+    "title": "抽象紧致性",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "metric-space",
+      "compact-interval"
+    ],
+    "summary": "理解开覆盖紧致性与序列紧致性在度量空间中的等价。",
+    "formula": "K\\text{紧致}\\Rightarrow\\text{每个开覆盖有有限子覆盖}",
+    "intuition": "局部有限信息能够覆盖整个集合。",
+    "pitfall": "误以为一般度量空间的闭有界一定紧致。",
+    "inquiry": "为什么无限维空间里的闭单位球常不紧？"
+  },
+  {
+    "id": "fixed-point",
+    "title": "压缩映射原理",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "metric-space",
+      "cauchy"
+    ],
+    "summary": "完备度量空间上的压缩映射有唯一不动点。",
+    "formula": "d(Tx,Ty)\\le qd(x,y),\\ 0<q<1",
+    "intuition": "迭代每一步都把误差缩小一个固定比例。",
+    "pitfall": "忽略空间完备性。",
+    "inquiry": "为什么迭代 x↦cos x 看起来会稳定？"
+  },
+  {
+    "id": "measure",
+    "title": "σ-代数与测度",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "real-axiom",
+      "series"
+    ],
+    "summary": "由有限可加走向可列可加，建立测度论基础。",
+    "formula": "\\mu(\\bigsqcup_{n}E_n)=\\sum_n\\mu(E_n)",
+    "intuition": "为更一般的“大小”建立一致的规则。",
+    "pitfall": "把所有子集都视为勒贝格可测。",
+    "inquiry": "可列可加为何比有限可加更强？"
+  },
+  {
+    "id": "measurable",
+    "title": "可测函数",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "measure",
+      "continuous"
+    ],
+    "summary": "通过逆像可测定义可测函数。",
+    "formula": "f^{-1}((a,\\infty))\\in\\mathcal F",
+    "intuition": "“函数可测”保证其数值分布可以谈论测度。",
+    "pitfall": "以为可测函数必连续。",
+    "inquiry": "为什么连续函数通常是 Borel 可测？"
+  },
+  {
+    "id": "lebesgue",
+    "title": "Lebesgue 积分",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "measurable",
+      "riemann"
+    ],
+    "summary": "从简单函数积分出发扩展可积函数类。",
+    "formula": "\\int f\\,d\\mu=\\sup_{0\\le s\\le f}\\int s\\,d\\mu\\quad(f\\ge0)",
+    "intuition": "黎曼按定义域切分；勒贝格更重视函数值的层次。",
+    "pitfall": "认为勒贝格可积蕴含处处连续。",
+    "inquiry": "狄利克雷函数在 [0,1] 的 Lebesgue 积分是多少？"
+  },
+  {
+    "id": "convergence-theorems",
+    "title": "单调收敛、Fatou 与控制收敛",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "lebesgue",
+      "uniform-conv"
+    ],
+    "summary": "严格辨别积分与极限交换的充分条件。",
+    "formula": "f_n\\to f,\\ |f_n|\\le g\\in L^1\\Rightarrow\\int f_n\\to\\int f",
+    "intuition": "控制收敛定理用同一个可积上界保证稳定。",
+    "pitfall": "把逐点收敛当作足以交换积分。",
+    "inquiry": "什么情况下 ∫lim fₙ≠lim∫fₙ？"
+  },
+  {
+    "id": "lp",
+    "title": "Lᵖ 空间",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "lebesgue",
+      "metric-space"
+    ],
+    "summary": "研究按几乎处处相等取等价类的函数范数空间。",
+    "formula": "\\|f\\|_p=(\\int|f|^p)^{1/p}",
+    "intuition": "用积分衡量函数的总体大小，而非每一点的最大值。",
+    "pitfall": "忽略函数等价类的概念。",
+    "inquiry": "L² 内积为何会引出 Hilbert 空间？"
+  },
+  {
+    "id": "banach-hilbert",
+    "title": "Banach 与 Hilbert 空间",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "lp",
+      "fixed-point"
+    ],
+    "summary": "理解完备赋范空间、内积空间与正交投影。",
+    "formula": "\\langle f,g\\rangle=\\int f\\overline g",
+    "intuition": "把有限维向量空间的几何推广至函数空间。",
+    "pitfall": "把所有 Banach 空间都当作内积空间。",
+    "inquiry": "为什么 L² 有特殊的正交结构？"
+  },
+  {
+    "id": "weak-convergence",
+    "title": "弱收敛与泛函",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "banach-hilbert"
+    ],
+    "summary": "由连续线性泛函测试序列收敛。",
+    "formula": "x_n\\rightharpoonup x\\iff\\forall\\phi\\in X^*: \\phi(x_n)\\to\\phi(x)",
+    "intuition": "不要求每个方向都强烈接近，只需经所有线性观察量测试。",
+    "pitfall": "弱收敛与范数收敛混淆。",
+    "inquiry": "无限维 Hilbert 空间的标准正交基弱收敛到什么？"
+  },
+  {
+    "id": "sobolev-distribution",
+    "title": "Sobolev 空间与广义导数",
+    "stage": 4,
+    "track": "高阶分析",
+    "family": "advanced",
+    "familyName": "现代分析",
+    "prerequisites": [
+      "weak-convergence",
+      "lebesgue"
+    ],
+    "summary": "用弱导数处理不够光滑的函数，连接偏微分方程。",
+    "formula": "W^{1,p}(\\Omega)=\\{u\\in L^p:\\partial_i u\\in L^p\\}",
+    "intuition": "即便函数不处处可导，也可能有适用的“导数”。",
+    "pitfall": "把经典导数与弱导数混为一谈。",
+    "inquiry": "绝对值函数在零点没有经典导数，但弱导数呢？"
+  }
+]

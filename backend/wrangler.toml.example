@@ -1,0 +1,14 @@
+name = "math-atlas-tutor"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+workers_dev = true
+
+[vars]
+# Replace with your ACTUAL GitHub Pages site origin, without a trailing slash.
+ALLOWED_ORIGIN = "https://xmulyssmathsoc.github.io"
+OPENAI_MODEL = "gpt-4.1-mini"
+
+# Add OPENAI_API_KEY with `npx wrangler secret put OPENAI_API_KEY`.
+# IMPORTANT: This is a teaching demo. Protect any PUBLIC deployment with
+# Cloudflare WAF/rate limits, identity checks or Turnstile, cost budgets,
+# and suitable content / privacy policy before allowing broad access.

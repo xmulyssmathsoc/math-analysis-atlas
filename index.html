@@ -1,0 +1,158 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="description" content="Math Atlas 数学分析 AI 教学资源库：60 个知识节点、交互式先修知识图谱、五阶学习路径、分层题库与数学实验室。" />
+  <meta name="theme-color" content="#101c32" />
+  <title>Math Atlas · 数学分析知识宇宙</title>
+  <link rel="icon" type="image/svg+xml" href="assets/favicon.svg" />
+  <link rel="stylesheet" href="assets/style.css" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.css" />
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.19.1/dist/contrib/auto-render.min.js"></script>
+  <script type="module" src="assets/app.js"></script>
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar" aria-label="主要导航">
+      <div class="brand">
+        <span class="brand-glyph" aria-hidden="true"><svg viewBox="0 0 48 48" fill="none"><circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="1.4" opacity=".6"/><circle cx="24" cy="24" r="10" stroke="currentColor" stroke-width="1.2" opacity=".8"/><circle cx="24" cy="24" r="3" fill="currentColor"/><path d="M7 29c8-23 29-23 36-5M11 11c23 3 29 19 25 29" stroke="currentColor" stroke-width="1.3"/></svg></span>
+        <div><strong>Math Atlas<span class="brand-dot">.</span></strong><small>数学分析 · 智能学习宇宙</small></div>
+      </div>
+      <div class="sidebar-section-label">EXPLORE / 探索</div>
+      <nav class="nav-list" id="navList">
+        <button class="nav-item active" data-view="dashboard" type="button"><span class="nav-symbol">◫</span> 学习总览 <span class="nav-hotkey">01</span></button>
+        <button class="nav-item" data-view="graph" type="button"><span class="nav-symbol">✧</span> 知识星图 <span class="nav-hotkey">02</span></button>
+        <button class="nav-item" data-view="paths" type="button"><span class="nav-symbol">⌁</span> 学习路径 <span class="nav-hotkey">03</span></button>
+        <button class="nav-item" data-view="library" type="button"><span class="nav-symbol">▤</span> 知识卡片 <span class="nav-hotkey">04</span></button>
+        <button class="nav-item" data-view="practice" type="button"><span class="nav-symbol">◇</span> 分层题库 <span class="nav-hotkey">05</span></button>
+        <button class="nav-item" data-view="lab" type="button"><span class="nav-symbol">≋</span> 极限实验室 <span class="nav-hotkey">06</span></button>
+      </nav>
+      <div class="sidebar-section-label second">INTELLIGENCE / 智能</div>
+      <nav class="nav-list">
+        <button class="nav-item" data-view="tutor" type="button"><span class="nav-symbol">✦</span> AI 学习导师 <span class="nav-badge">BETA</span></button>
+        <button class="nav-item" data-view="resources" type="button"><span class="nav-symbol">▧</span> 开放资源馆</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <div class="sidebar-progress">
+          <div class="side-progress-top"><span class="small-star">✹</span> 我的学习档案 <span id="sidePercent">0%</span></div>
+          <div class="progress-track"><div class="progress-bar" id="sideProgressBar"></div></div>
+          <div class="side-progress-note" id="sideProgressNote">旅程从第一颗知识星开始。</div>
+          <button type="button" class="sidebar-tutor-link" data-view="tutor">向导师提问 <span>↗</span></button>
+        </div>
+        <div class="sidebar-footer"><span class="online-indicator"></span> An open learning experiment<br><span>by xmulyssmathsoc</span></div>
+      </div>
+    </aside>
+
+    <div class="workspace">
+      <header class="topbar">
+        <div class="topbar-leading">
+          <button class="mobile-menu" type="button" id="mobileMenu" aria-label="展开导航">☰</button>
+          <span class="breadcrumb-root">MATH ATLAS</span><span class="breadcrumb-separator">/</span>
+          <span id="breadcrumbCurrent">学习总览</span>
+        </div>
+        <div class="top-actions">
+          <button id="topSearch" class="search-trigger" type="button"><span>⌕</span><span>搜索知识、定理、题目...</span><kbd>/</kbd></button>
+          <span class="topbar-divider"></span>
+          <button class="icon-button" id="settingsButton" type="button" aria-label="AI 导师设置" title="AI 导师设置">⚙</button>
+          <span class="avatar" aria-label="Math Atlas 用户">M</span>
+        </div>
+      </header>
+
+      <main id="mainContent">
+        <section class="page active" id="view-dashboard" aria-label="学习总览">
+          <div class="welcome-line"><span class="eyebrow-dot"></span> YOUR ANALYSIS JOURNEY <span class="welcome-spark">✳ 开放、严谨、循序渐进</span></div>
+          <div class="hero">
+            <div class="hero-copy">
+              <div class="hero-chip"><span>✦</span> THE NEW WAY TO LEARN MATHEMATICAL ANALYSIS</div>
+              <h1>从一个极限出发，<br />探索<span>数学的无限可能。</span></h1>
+              <p>不仅整理知识，更让知识彼此连接。用先修知识图谱定位起点，用分层挑战训练思维，让 AI 引导你写出自己的证明。</p>
+              <div class="hero-actions"><button class="btn btn-primary" type="button" data-view="graph">探索知识星图 <span>↗</span></button><button class="btn btn-ghost-light" type="button" data-view="tutor">和导师开始对话 <span>→</span></button></div>
+              <div class="hero-subline">FREE & OPEN <span>·</span> KNOWLEDGE-FIRST <span>·</span> LEARN AT YOUR PACE</div>
+            </div>
+            <div class="hero-art" aria-hidden="true"><svg viewBox="0 0 420 340" class="orbital-art"><defs><linearGradient id="orbit-grad" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#93c5fd"/><stop offset="1" stop-color="#bca5ff"/></linearGradient><radialGradient id="core-grad"><stop stop-color="#d3ecff"/><stop offset=".43" stop-color="#7aaaff"/><stop offset="1" stop-color="#5060bc" stop-opacity=".2"/></radialGradient></defs><ellipse cx="222" cy="162" rx="164" ry="72" transform="rotate(-28 222 162)" stroke="url(#orbit-grad)" opacity=".55" fill="none"/><ellipse cx="222" cy="162" rx="164" ry="72" transform="rotate(48 222 162)" stroke="url(#orbit-grad)" opacity=".5" fill="none"/><circle cx="222" cy="162" r="97" stroke="#a1bfff" opacity=".23" fill="none"/><circle cx="222" cy="162" r="68" stroke="#a1bfff" opacity=".18" fill="none"/><circle cx="222" cy="162" r="52" fill="url(#core-grad)"/><text x="222" y="173" font-family="Georgia,serif" font-size="43" text-anchor="middle" fill="white">∫</text><circle cx="130" cy="77" r="8" fill="#b8a3ff"/><circle cx="363" cy="178" r="6" fill="#8de3e6"/><circle cx="215" cy="282" r="6" fill="#f4d38a"/><circle cx="71" cy="205" r="3" fill="#bfdeff"/><circle cx="315" cy="51" r="3" fill="#bfdeff"/><text x="345" y="89" font-size="18" fill="#aac6f8" font-family="serif">∞</text><text x="70" y="148" font-size="17" fill="#a8afe9" font-family="serif">ε → 0</text><text x="274" y="295" font-size="16" fill="#a8afe9" font-family="serif">f′(x)</text><path d="M42 247l5 0m-2.5-2.5v5M341 35l7 0m-3.5-3.5v7" stroke="#9daff7" stroke-width="1.5"/></svg></div>
+          </div>
+          <div class="stat-grid" id="dashboardStats"></div>
+          <div class="dashboard-layout">
+            <section class="panel journey-panel">
+              <div class="section-heading"><div><span class="section-kicker">01 / KNOWLEDGE ROUTE</span><h2>你的知识旅程</h2><p>从预备基础到现代分析，循序解锁每一个关键概念。</p></div><button class="text-link" data-view="paths" type="button">全部路径 ↗</button></div>
+              <div id="journeyPreview" class="journey-preview"></div>
+            </section>
+            <div class="right-stack">
+              <section class="panel next-panel"><div class="small-overline">NEXT BEST STEP <span>✦</span></div><h3>为你推荐的下一站</h3><div id="nextRecommendation"></div></section>
+              <section class="quote-panel"><div class="quote-glow">“</div><blockquote>你不需要一次看懂整片宇宙，<br/>只要比昨天多理解一个定义。</blockquote><span>— MATH ATLAS · A LEARNING PHILOSOPHY</span></section>
+            </div>
+          </div>
+          <div class="dash-section-heading"><div><span class="section-kicker">02 / LEARNING TOOLS</span><h2>探索你的数学工具箱</h2></div></div>
+          <div class="tool-grid">
+            <button type="button" class="tool-card tool-graph" data-view="graph"><span class="tool-icon">✧</span><span class="tool-index">01 / MAP</span><strong>知识星图</strong><span>把定义、定理和方法连接成可追溯的知识网络。</span><span class="tool-arrow">↗</span></button>
+            <button type="button" class="tool-card tool-practice" data-view="practice"><span class="tool-icon">◇</span><span class="tool-index">02 / CHALLENGE</span><strong>分层题库</strong><span>从计算到严格证明，难度不跳级，反馈有依据。</span><span class="tool-arrow">↗</span></button>
+            <button type="button" class="tool-card tool-lab" data-view="lab"><span class="tool-icon">ε</span><span class="tool-index">03 / EXPERIMENT</span><strong>极限实验室</strong><span>拖动 ε、δ 与 N，看懂极限量词背后的几何。</span><span class="tool-arrow">↗</span></button>
+            <button type="button" class="tool-card tool-ai" data-view="tutor"><span class="tool-icon">✦</span><span class="tool-index">04 / AI TUTOR</span><strong>智能引导导师</strong><span>先问关键问题，再给提示；把答案留给学习者。</span><span class="tool-arrow">↗</span></button>
+          </div>
+        </section>
+
+        <section class="page" id="view-graph" aria-label="知识星图">
+          <div class="page-heading"><div><span class="section-kicker">THE KNOWLEDGE UNIVERSE / 01</span><h1>知识星图 <span class="heading-accent">✧</span></h1><p>60 个经过组织的知识节点，以 104 条先修关系串联。点击节点，看看一条定理如何通向下一条。</p></div><span class="heading-ornament">GRAPH / V1.0</span></div>
+          <div class="graph-layout">
+            <div class="graph-main panel">
+              <div class="graph-toolbar"><div class="graph-tabs" id="graphStageTabs"></div><div class="graph-controls"><button type="button" id="graphZoomOut" aria-label="缩小知识图谱">−</button><button type="button" id="graphZoomIn" aria-label="放大知识图谱">＋</button><button type="button" id="graphReset" title="回到起点">重置视野</button></div></div>
+              <div class="graph-viewport" id="graphViewport"><svg id="graphSvg" viewBox="-65 -30 1200 690" role="img" aria-label="可平移缩放的数学分析知识先修依赖图"></svg><div class="graph-watermark">MATH <b>ATLAS</b> <span>KNOWLEDGE CONSTELLATION</span></div></div>
+              <div class="graph-footer"><div class="graph-legend"><span><i class="lg pre"></i> 预备</span><span><i class="lg core"></i> 核心</span><span><i class="lg deep"></i> 进阶</span><span><i class="lg multi"></i> 多元</span><span><i class="lg high"></i> 高阶</span></div><span>按住空白处拖动 · 滚轮缩放 · 点击节点探索</span></div>
+            </div>
+            <aside class="graph-inspector panel" id="graphInspector"></aside>
+          </div>
+        </section>
+
+        <section class="page" id="view-paths" aria-label="学习路径">
+          <div class="page-heading"><div><span class="section-kicker">CURRICULUM / 02</span><h1>把复杂的数学，拆成<span class="heading-accent">可走的路。</span></h1><p>五阶课程跨度覆盖高中衔接、本科数学分析、多元微积分，以及现代实分析方向。</p></div></div>
+          <div class="path-intro"><span class="pulse-dot"></span> 根据已掌握的先修知识推荐后续学习，但所有课程均可自由浏览。</div>
+          <div id="pathCards" class="path-list"></div>
+        </section>
+
+        <section class="page" id="view-library" aria-label="知识卡片">
+          <div class="page-heading"><div><span class="section-kicker">REFERENCE / 03</span><h1>知识卡片<span class="heading-accent">图书馆。</span></h1><p>每张卡片都有定义、直觉解释、常见误区与一条可继续追问的问题；重点节点还有完整推导。</p></div><span id="libraryCount" class="result-count"></span></div>
+          <div class="filter-panel"><div class="filter-search"><span>⌕</span><input id="librarySearch" type="search" placeholder="搜索极限、紧致性、Lebesgue..." aria-label="搜索知识卡片" /></div><select id="libraryStage" aria-label="筛选课程阶段"><option value="all">全部阶段</option><option value="0">预备桥梁</option><option value="1">数学分析 I</option><option value="2">数学分析 II</option><option value="3">多元分析 III</option><option value="4">高阶分析</option></select><select id="libraryFamily" aria-label="筛选知识主题"><option value="all">全部知识领域</option></select><label class="bookmark-filter"><input id="onlySaved" type="checkbox" /> 仅收藏</label></div>
+          <div id="libraryGrid" class="library-grid"></div>
+        </section>
+
+        <section class="page" id="view-practice" aria-label="分层题库">
+          <div class="page-heading"><div><span class="section-kicker">PRACTICE / 04</span><h1>理解之后，<span class="heading-accent">才是证明。</span></h1><p>46 道原创分层练习。客观题即时反馈；证明题提供逐层提示和自评标准，不冒充自动证明评分。</p></div></div>
+          <div class="practice-intro"><div class="practice-intro-icon">◇</div><div><strong>可追踪的练习反馈</strong><span>答错会保留记录，重做正确后更新成绩。证明题由自己核对评分要点。</span></div><div class="practice-stat" id="practiceStat">0 / 46 完成</div></div>
+          <div class="difficulty-tabs" id="difficultyTabs"></div>
+          <div class="practice-layout"><aside class="practice-list panel"><div class="practice-list-head"><strong>练习目录</strong><span id="practiceListCount"></span></div><div id="exerciseList"></div></aside><div id="exerciseDetail" class="exercise-detail panel"></div></div>
+        </section>
+
+        <section class="page" id="view-lab" aria-label="极限实验室">
+          <div class="page-heading"><div><span class="section-kicker">INTERACTIVE LAB / 05</span><h1>让抽象定义<span class="heading-accent">看得见。</span></h1><p>两个可交互实验把 ε–δ、ε–N 转换成图像与不等式。图像只是直觉，严谨结论依旧来自解析证明。</p></div></div>
+          <div class="lab-tabs"><button class="lab-tab active" type="button" data-lab="delta">实验 A · 函数极限 ε–δ</button><button class="lab-tab" type="button" data-lab="sequence">实验 B · 数列极限 ε–N</button></div>
+          <div id="deltaLab" class="lab-layout"><div class="lab-chart-panel panel"><div class="lab-chart-title"><strong>观察 $f(x)=x^2$ 在 $x\\to2$ 时</strong><span>拖动两个滑杆，探索输入误差与输出误差的关系。</span></div><svg id="deltaChart" class="lab-chart" viewBox="0 0 620 380" role="img" aria-label="函数 y=x平方 及 epsilon delta 邻域示意图"></svg><div class="chart-legend"><span><i class="line-purple"></i> 函数曲线</span><span><i class="line-blue"></i> δ 邻域</span><span><i class="line-gold"></i> ε 容差带</span></div></div><div class="lab-controls panel"><span class="section-kicker">CONTROL THE DEFINITION</span><h3>你来挑战 ε–δ</h3><p>给定 ε，你需要选择 δ，使邻域中的函数值都落在容差带内。</p><div class="range-label"><label for="epsilonSlider">输出容差 ε</label><output id="epsilonValue">1.0</output></div><input id="epsilonSlider" type="range" min="0.2" max="3" value="1" step="0.1" /><div class="range-label"><label for="deltaSlider">输入半径 δ</label><output id="deltaValue">0.2</output></div><input id="deltaSlider" type="range" min="0.05" max="1.3" value="0.2" step="0.01" /><div class="lab-check" id="deltaCheck"></div><div class="proof-notice"><strong>严格证明提示</strong><p>因为 $|x^2-4|=|x-2||x+2|$，只要选 $\\delta\\le1$，就能把后一项控制在 5 以内，因此 $\\delta=\\min(1,\\varepsilon/5)$ 一定可行。</p></div><button class="btn btn-soft" id="labOpenLesson" type="button">阅读 ε–δ 严格证明 ↗</button></div></div>
+          <div id="sequenceLab" class="lab-layout" hidden><div class="lab-chart-panel panel"><div class="lab-chart-title"><strong>观察数列 $a_n=1/n\\to0$</strong><span>控制 N 之后，n>N 的所有尾项都必须落进 ε 带。</span></div><svg id="sequenceChart" class="lab-chart" viewBox="0 0 620 380" role="img" aria-label="数列 1除以n 的收敛与 epsilon N 示意图"></svg><div class="chart-legend"><span><i class="line-purple"></i> 数列项</span><span><i class="line-blue"></i> 选定 N</span><span><i class="line-gold"></i> ε 容差带</span></div></div><div class="lab-controls panel"><span class="section-kicker">QUANTIFIERS IN ACTION</span><h3>找到足够大的 N</h3><p>调整 ε 和 N，检查是否对每一个整数 n>N 都有 1/n<ε。</p><div class="range-label"><label for="sequenceEpsilon">精度 ε</label><output id="sequenceEpsilonValue">0.10</output></div><input id="sequenceEpsilon" type="range" min="0.01" max="0.3" value="0.1" step="0.01" /><div class="range-label"><label for="sequenceN">门槛 N</label><output id="sequenceNValue">10</output></div><input id="sequenceN" type="range" min="1" max="120" value="10" step="1" /><div class="lab-check" id="sequenceCheck"></div><div class="proof-notice"><strong>严格证明提示</strong><p>对任意 ε>0，取整数 $N>1/\\varepsilon$ 是一个总能成功的保守选择；该实验还会计算最小可行的非负整数 N。</p></div><button class="btn btn-soft" id="sequenceOpenLesson" type="button">阅读 ε–N 严格证明 ↗</button></div></div>
+        </section>
+
+        <section class="page" id="view-tutor" aria-label="智能学习导师">
+          <div class="page-heading"><div><span class="section-kicker">SOCRATIC LEARNING / 06</span><h1>你的思维伙伴，<span class="heading-accent">不是答案机器。</span></h1><p>先识别思路，再逐级提示，最后才展开证明。可直接使用本地引导脚本，也可接入你自己的安全 AI 服务端。</p></div><span class="tutor-live-badge" id="tutorModeBadge">本地引导 · 无需密钥</span></div>
+          <div class="tutor-layout"><section class="chat-panel panel"><div class="chat-head"><div class="tutor-avatar">✦</div><div><strong>Atlas · 数学学习导师</strong><small id="tutorStatus">本地预设引导（不是实时大模型）</small></div><button type="button" class="chat-clear" id="clearChat">清空对话</button></div><div class="mode-choices" id="tutorModes"><button type="button" class="mode-chip active" data-mode="socratic">✧ 苏格拉底引导</button><button type="button" class="mode-chip" data-mode="proof">▤ 证明训练</button><button type="button" class="mode-chip" data-mode="example">◇ 例题拆解</button></div><div class="chat-messages" id="chatMessages" aria-live="polite"></div><div class="chat-chips"><button type="button" data-tutor-quick="我应该从哪里开始思考？">从哪里开始？</button><button type="button" data-tutor-quick="请给我一个小提示，不要直接给答案">给一点提示</button><button type="button" data-tutor-quick="这道题的常见错误是什么？">常见错误</button></div><form id="tutorForm" class="tutor-composer"><textarea id="tutorInput" rows="2" placeholder="写下你的推理，或告诉导师你卡在了哪一步..." aria-label="给数学导师发送消息"></textarea><button type="submit" id="tutorSend" aria-label="发送消息">↗</button></form><div class="chat-footnote">数学建议可能出错，重要结论请核对定义与证明。<span>Shift + Enter 换行</span></div></section><aside class="tutor-side"><section class="panel tutor-context"><span class="section-kicker">CURRENT LEARNING CONTEXT</span><h3>导师正在关注</h3><div id="tutorContext"></div><label for="tutorTopic">切换知识点</label><select id="tutorTopic"></select><button class="btn btn-soft" id="tutorOpenTopic" type="button">查看该知识点 ↗</button></section><section class="panel tutor-connect"><div class="tutor-connect-icon">⌘</div><h3>连接真正的 AI</h3><p>默认模式可离线使用。若配置安全的服务端 API，便能让语言模型理解你的回答，进行多轮追问。</p><button type="button" class="text-link" id="openApiSettings">配置 AI 服务端 →</button></section><section class="tutor-tip"><span>TEACHING PRINCIPLE</span><p>每次追问都要帮助学习者建立一个可以复用的推理步骤。</p></section></aside></div>
+        </section>
+
+        <section class="page" id="view-resources" aria-label="开放资源馆">
+          <div class="page-heading"><div><span class="section-kicker">OPEN LEARNING / 07</span><h1>站在巨人的肩膀上，<span class="heading-accent">再自己证明。</span></h1><p>精选课程、开放教材和可视化资源。链接只指向原站，不直接搬运受版权保护的课程内容。</p></div></div>
+          <div class="resources-intro panel"><div class="resource-orbit">◎</div><div><strong>透明、可追溯的知识来源</strong><p>平台中的知识卡片与题目为原创编排；外部课程提供可核验的延伸阅读。阅读与再利用时请遵守各来源的许可条款。</p></div></div>
+          <div id="resourceGrid" class="resources-grid"></div>
+          <div class="resource-end">想参与纠错、补充课程、共建知识图谱？打开项目中的 <code>docs/CONTRIBUTING.md</code> 查看规范。</div>
+        </section>
+      </main>
+      <footer class="site-footer"><span>© Math Atlas · 以理解为坐标，以证明为路径。</span><span>Built for <b>xmulyssmathsoc</b> <span class="footer-dot">●</span> Open-source learning lab</span></footer>
+    </div>
+  </div>
+
+  <div id="sidebarScrim" class="sidebar-scrim" hidden></div>
+  <div id="lessonBackdrop" class="modal-backdrop" hidden></div>
+  <aside class="lesson-drawer" id="lessonDrawer" role="dialog" aria-modal="true" aria-label="知识点详情" aria-hidden="true"><div class="lesson-drawer-head"><span>ATLAS / KNOWLEDGE NOTE</span><button type="button" id="lessonClose" aria-label="关闭知识卡片">×</button></div><div id="lessonContent" class="lesson-content"></div></aside>
+  <div class="search-overlay" id="searchOverlay" hidden><div class="search-dialog" role="dialog" aria-modal="true" aria-label="全站搜索"><div class="search-dialog-top"><span>⌕</span><input id="globalSearch" type="search" placeholder="输入概念、定理、题目关键词..." autocomplete="off" /><button type="button" id="searchClose">ESC</button></div><div id="globalSearchResults" class="global-search-results"></div><div class="search-dialog-foot">回车打开首项 · 点击查看知识卡片 · ESC 关闭</div></div></div>
+  <div class="settings-overlay" id="settingsOverlay" hidden><div class="settings-dialog" role="dialog" aria-modal="true" aria-label="AI 服务端设置"><div class="settings-head"><div><span class="section-kicker">OPTIONAL AI CONNECTION</span><h2>连接你的 AI 导师</h2></div><button type="button" id="settingsClose" aria-label="关闭设置">×</button></div><p>数学库默认使用本地教学引导。要体验真实的多轮 AI 推理，请将服务端部署为 API 代理，然后填写地址。<strong>请勿在网页中填写模型 API Key。</strong></p><label for="endpointInput">安全 API 端点 URL</label><input type="url" id="endpointInput" placeholder="https://your-worker.example.workers.dev/api/tutor" /><div class="settings-hint">浏览器只保存端点地址；模型密钥必须留在服务端环境变量中。配置示例参阅 <code>backend/worker.js</code>。</div><div class="settings-actions"><button type="button" class="btn btn-soft" id="endpointClear">使用本地引导</button><button type="button" class="btn btn-primary" id="endpointSave">保存连接 →</button></div></div></div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <noscript><div class="noscript">本资源库包含交互式知识图谱与题库，需要启用 JavaScript 才能使用。</div></noscript>
+</body>
+</html>

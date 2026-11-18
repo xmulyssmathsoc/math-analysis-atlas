@@ -1,0 +1,14 @@
+{
+  "name": "math-analysis-atlas",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Interactive, AI-oriented mathematical analysis learning library",
+  "scripts": {
+    "validate": "node scripts/validate.mjs",
+    "smoke": "node scripts/smoke.mjs",
+    "serve": "python3 -m http.server 8000"
+  },
+  "engines": {"node": ">=20"},
+  "license": "MIT"
+}
